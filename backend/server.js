@@ -10,3 +10,6 @@ mongoose.connect(process.env.MONCO_URI, {useNewUrlParser: true, useUnifiedTopolo
     .catch(err => console.log(err));
 
 app.listen(5000, () => console.log("Server running on post 5000"));
+
+const authRoutes = require("./routes/auth");
+app.use("\auth", authRoutes);
